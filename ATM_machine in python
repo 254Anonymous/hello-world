@@ -1,0 +1,39 @@
+print("Welcome to BankWorld...your bank of choice");
+print("Swipe your mastercard to continue with transaction");
+#making a static balance of ksh.10000
+balance = 10000;
+
+#prompting for an atm pin/mastercard
+atm_pin = input("Enter your four digit pin");
+
+#now we prompt the user to make a transaction option
+
+option = eval(input("Make your preffered option below:"));
+#printing out the given options
+print("1.Check Balance");
+print("2.Cash Withdrawal");
+print("3.Cash Deposit");
+print("4.Cash Transfer");
+print("5.Quit");
+
+option = eval(input("Enter your prefered option:"));
+if option==1: #using the decision making tool if statement
+    print("Your balance is Ksh."  ,balance);
+elif option==2:
+    amount = eval(input("Enter the amount to withdraw:"))
+    if amount>=balance:
+        print("You have an outstanding balance of Ksh." ,balance,"in your account..upgrade and try again");
+    else:
+        print("You have withdrawn Ksh." ,amount,"from your account");
+        print("Your new account balance is Ksh." ,(balance-amount));
+elif option==3:
+    deposit = eval(input("Enter the amount to deposit in your account:"))
+    print("You have deposited ",deposit,"in your bank account and your new account balance is ",(balance+deposit));
+elif option ==4:
+    transfer  = eval(input("Enter amount to transfer:"));
+    print("You have transfered Ksh." ,transfer,"to account number 2345675678 on tuesday 2nd July at 10:24AM ");
+    print("Your new account balance is Ksh." ,(balance-transfer));
+elif option==5:
+    print("You've quit our service...thank you!");
+else: #if the option given is not within the scope of listed options it jumps to the else statement
+    print("Invalid  choise....please try again");
